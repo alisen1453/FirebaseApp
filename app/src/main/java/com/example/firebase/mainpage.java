@@ -36,7 +36,7 @@ public class mainpage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityMainpageBinding.inflate(getLayoutInflater());
-            View view=binding.getRoot();
+        View view=binding.getRoot();
         setContentView(view);
         auth=FirebaseAuth.getInstance();
         firestore=FirebaseFirestore.getInstance();
@@ -79,7 +79,8 @@ public class mainpage extends AppCompatActivity {
                             Map<String,Object> data=snapshot.getData();
                             String email=(String) data.get("mail");
                             String comment=(String) data.get("yorum");
-                            Post post=new Post(email,comment);
+                            String imageurl=(String) data.get("url");
+                            Post post=new Post(email,comment,imageurl);
                             postArrayList.add(post);
                         }
                         listAdapter.notifyDataSetChanged();

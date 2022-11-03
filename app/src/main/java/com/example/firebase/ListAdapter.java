@@ -1,5 +1,6 @@
 package com.example.firebase;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firebase.databinding.RecycleRowBinding;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -28,6 +30,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListView> {
     public void onBindViewHolder(@NonNull ListAdapter.ListView holder, int position) {
         holder.recycleRowBinding.email.setText(postArrayList.get(position).email);
         holder.recycleRowBinding.comment.setText(postArrayList.get(position).comment);
+        Picasso.get().load(postArrayList.get(position).imageurl).into(holder.recycleRowBinding.imagestore);
+
 
     }
 

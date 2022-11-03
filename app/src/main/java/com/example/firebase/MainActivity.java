@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         auth = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser=auth.getCurrentUser();
-        if(firebaseUser!=null){
+        FirebaseUser firebaseUser = auth.getCurrentUser();
+        if (firebaseUser != null) {
             Intent intent = new Intent(MainActivity.this, mainpage.class);
             startActivity(intent);
             finish();
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void singIn (View view) {
+    public void singIn(View view) {
         String email = binding.email.getText().toString().trim();
         String pass = binding.pass.getText().toString().trim();
         if (email.equals("") && pass.equals("")) {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void singUp (View view) {
+    public void singUp(View view) {
         String email = binding.email.getText().toString().trim();
         String pass = binding.pass.getText().toString().trim();
         if (email.equals("") && pass.equals("")) {
