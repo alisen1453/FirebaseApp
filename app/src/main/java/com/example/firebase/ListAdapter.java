@@ -34,7 +34,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListView> {
 
 
     }
-
+//deneme
     @Override
     public int getItemCount() {
         return postArrayList.size();
